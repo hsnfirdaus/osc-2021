@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Lomba Desain Web | OSC 2021 - Batam Linux User Group</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="assets/css/feather.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+</head>
+<body>
+	<header id="header" class="fixed">
+		<div class="container">
+			<div id="logo">
+				<a href="index.html">
+					<img src="assets/img/osc.png" alt="Logo OSC 2021">
+				</a>
+			</div>
+			<nav>
+				<button onclick="toggleHide(event);" class="close"><i class="feather icon-x"></i></button>
+				<ul id="navbar">
+					<li><a href="index.html">Home</a></li>
+					<li>
+						<a href="#">Cabang Lomba <i class="feather icon-chevron-down"></i></a>
+						<ul class="children">
+							<li><a href="lomba_desain_web.html">Desain Web</a></li>
+							<li><a href="lomba_desain_poster.html">Desain Poster</a></li>
+							<li><a href="lomba_ctf.html">CTF (Capture The Flag)</a></li>
+						</ul>
+					</li>
+					<li><a href="kontak.html">Kontak</a></li>
+				</ul>
+			</nav>
+			<div class="regbutton"><a href="daftar.html">Daftar</a></div>
+			<div id="toggle-menu"><button onclick="toggleShow(event);"><i class="feather icon-menu"></i></button></div>
+		</div>
+	</header>
+	<main id="single-lomba">
+		<section id="head-lomba" style="background-image: url('assets/img/desainweb.jpg');">
+			<div class="head-filter">
+				<div class="container">
+					<h1>Lomba <span class="txt-primary">Desain Web</span></h1>
+				</div>
+			</div>
+		</section>
+		<section id="lomba-content">
+			<div class="container">
+				<h4>Penjelasan :</h4>
+				<p>Desain web adalah suatu desain tata kelola tampilan konten-konten pada website yang akan ditampilkan kepada client atau penerima informasi melalui world wide web. Desain web merupakan bagian penting dalam pengembangan suatu website, karena suatu web akan dikatakan berkualitas ketika tidak hanya menonjolkan sisi fungsionalitas melainkan juga sisi seni dan estetika serta user interface dari website itu sendiri.</p>
+				<h4>Persyaratan Lomba :</h4>
+				<div class="list"><span class="list-number">1</span><div class="list-content">Peserta lomba terdiri dari 1 orang dan masih berstatus SMA/SMK sederajat dengan menunjukan kartu pelajar.</div></div>
+				<div class="list"><span class="list-number">2</span><div class="list-content">Peserta mendaftar pada tanggal yang sudah di tentukan.</div></div>
+				<div class="list"><span class="list-number">3</span><div class="list-content">Peserta wajib melunasi biaya pendaftaran</div></div>
+				<div class="list"><span class="list-number">4</span><div class="list-content">Dilarang menggunakan framework css maupun template dari orang lain.</div></div>
+				<div class="list"><span class="list-number">5</span><div class="list-content">Desain website yang dilombakan belum pernah dilombakan sebelumnya.</div></div>
+				<div class="list"><span class="list-number">6</span><div class="list-content">Panitia berhak mendiskualifikasi peserta jika ketahuan menjiplak karya orang lain.</div></div>
+				<div class="list"><span class="list-number">7</span><div class="list-content">Panitia memberikan soal beserta asset yang akan digunakan dalam desain web.</div></div>
+				<div class="list"><span class="list-number">8</span><div class="list-content">Peserta harus mengikuti instruksi dari panitia selama lomba berlangsung</div></div>
+				<div class="list"><span class="list-number">9</span><div class="list-content">Perserta mengumpulkan hasil karya lomba ke link yang diberikan kepada panitia saat lomba berlangsung</div></div>
+				<div class="center margin"><a href="daftar.html" class="primary-btn">Daftar Sekarang</a></div>
+			</div>
+		</section>
+	</main>
+	<footer id="footer">
+		<div class="container">
+			<h6>Hak Cipta &copy; 2021 <a href="//fb.com/hsnfirdaus">Muhammad Hasan Firdaus</a>.</h6> 
+		</div>
+	</footer>
+	<script type="text/javascript">
+		function toggleShow(event){
+			event.preventDefault();
+			document.getElementsByTagName('nav')[0].className='show';
+		}
+		function toggleHide(event){
+			event.preventDefault();
+			document.getElementsByTagName('nav')[0].className='';
+		}
+		window.addEventListener('scroll',function(ev){
+			var top=window.scrollYOffset||document.documentElement.scrollTop;
+			if (top>50) {
+				document.getElementById('header').className='fixed fill';
+			}else{
+				document.getElementById('header').className='fixed';
+			}
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Pendaftaran Lomba | OSC 2021 - Batam Linux User Group</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="assets/css/feather.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+</head>
+<body>
+	<header id="header" class="fixed">
+		<div class="container">
+			<div id="logo">
+				<a href="index.html">
+					<img src="assets/img/osc.png" alt="Logo OSC 2021">
+				</a>
+			</div>
+			<nav>
+				<button onclick="toggleHide(event);" class="close"><i class="feather icon-x"></i></button>
+				<ul id="navbar">
+					<li><a href="index.html">Home</a></li>
+					<li>
+						<a href="#">Cabang Lomba <i class="feather icon-chevron-down"></i></a>
+						<ul class="children">
+							<li><a href="lomba_desain_web.html">Desain Web</a></li>
+							<li><a href="lomba_desain_poster.html">Desain Poster</a></li>
+							<li><a href="lomba_ctf.html">CTF (Capture The Flag)</a></li>
+						</ul>
+					</li>
+					<li><a href="kontak.html">Kontak</a></li>
+				</ul>
+			</nav>
+			<div class="regbutton"><a href="daftar.html">Daftar</a></div>
+			<div id="toggle-menu"><button onclick="toggleShow(event);"><i class="feather icon-menu"></i></button></div>
+		</div>
+	</header>
+	<main id="single-lomba">
+		<section id="head-lomba">
+			<div class="head-filter nofilter">
+				<div class="container">
+					<h1>Pendaftaran <span class="txt-primary">Lomba</span></h1>
+				</div>
+			</div>
+		</section>
+		<section id="kontak-form">
+			<div class="container">
+				<form method="POST">
+					<div class="two-col">
+						<fieldset>
+							<label for="lomba">Cabang Lomba :</label>
+							<select name="lomba" id="lomba" onChange="handleSelect(event);">
+								<option value="ctf">CTF (Capture The Flag)</option>
+								<option value="web">Desain Web</option>
+								<option value="poster">Desain Poster</option>
+							</select>
+						</fieldset>
+						<fieldset>
+							<label for="nama">Nama Pendaftar :</label>
+							<input type="text" name="nama" id="nama" placeholder="Nama anda...">
+						</fieldset>
+					</div>
+					<div id="ctf-only" class="two-col">
+						<fieldset>
+							<label for="nama2">Nama Anggota 1 :</label>
+							<input type="text" name="nama2" id="nama2" placeholder="Nama anggota pertama...">
+						</fieldset>
+						<fieldset>
+							<label for="nama2">Nama Anggota 2 :</label>
+							<input type="text" name="nama3" id="nama3" placeholder="Nama anggota kedua...">
+						</fieldset>
+					</div>
+					<div class="two-col">
+						<fieldset>
+							<label for="asal">Asal Sekolah :</label>
+							<input type="text" name="asal" id="asal" placeholder="Asal Sekolah...">
+						</fieldset>
+						<div style="opacity: 0;"></div>
+					</div>
+					<div class="two-col">
+						<fieldset>
+							<label for="email">Email :</label>
+							<input type="email" name="email" id="email" placeholder="contoh@email.com">
+						</fieldset>
+						<fieldset>
+							<label for="hp">Nomor Hp :</label>
+							<input type="text" name="hp" id="hp" placeholder="Nomor HP...">
+						</fieldset>
+					</div>
+					<fieldset>
+						<label for="file">Bukti Pembayaran :</label>
+						<div class="file-container">
+							<input type="file" name="file">
+							<span><i class="feather icon-file-text"></i>Pilih Berkas</span>
+						</div>
+					</fieldset>
+					<button class="submit" type="submit">Mendaftar</button>
+				</form>
+			</div>
+		</section>
+	</main>
+	<footer id="footer">
+		<div class="container">
+			<h6>Hak Cipta &copy; 2021 <a href="//fb.com/hsnfirdaus">Muhammad Hasan Firdaus</a>.</h6> 
+		</div>
+	</footer>
+	<script type="text/javascript">
+		function toggleShow(event){
+			event.preventDefault();
+			document.getElementsByTagName('nav')[0].className='show';
+		}
+		function toggleHide(event){
+			event.preventDefault();
+			document.getElementsByTagName('nav')[0].className='';
+		}
+		function handleSelect(event){
+			if (event.target.value==='ctf') {
+				document.getElementById('ctf-only').style.display='';
+			}else{
+				document.getElementById('ctf-only').style.display='none';
+			}
+		}
+		window.addEventListener('scroll',function(ev){
+			var top=window.scrollYOffset||document.documentElement.scrollTop;
+			if (top>50) {
+				document.getElementById('header').className='fixed fill';
+			}else{
+				document.getElementById('header').className='fixed';
+			}
+		})
+	</script>
+</body>
+</html>
